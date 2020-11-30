@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
+import common.Constants;
 
 @SuppressWarnings("unchecked")
 public class Database {
@@ -58,8 +59,8 @@ public class Database {
             actors.add(actor);
         }
         for (ActionInputData data : input.getCommands()) {
-            if (data.getActionType().equals("command")) {
-                if (data.getType().equals("favorite")) {
+            if (data.getActionType().equals(Constants.COMMAND)) {
+                if (data.getType().equals(Constants.FAVORITE)) {
                     if (favorite(data.getUsername(), data.getTitle()) == FIRST) {
                         arrayResult.add(fileWriter.writeFile(data.getActionId(), "a",
                         "success -> " + data.getTitle() + " was added as favourite"));
@@ -70,10 +71,10 @@ public class Database {
                         arrayResult.add(fileWriter.writeFile(data.getActionId(), "a",
                         "error -> " + data.getTitle() + " is not seen"));
                     }
-                } else if (data.getType().equals("view")) {
+                } else if (data.getType().equals(Constants.VIEW)) {
                     arrayResult.add(fileWriter.writeFile(data.getActionId(), "a",
                     view(data.getUsername(), data.getTitle())));
-                } else if (data.getType().equals("rating")) {
+                } else if (data.getType().equals(Constants.RATING)) {
                     if (data.getSeasonNumber() == 0) {
                         if (ratingMovie(data.getUsername(), data.getTitle(),
                                 data.getGrade()) == FIRST) {
@@ -108,70 +109,70 @@ public class Database {
                         }
                     }
                 }
-            } else if ("query".equals(data.getActionType())) {
-                if (data.getObjectType().equals("actors")) {
-                    if ("average".equals(data.getCriteria())) {
+            } else if (data.getActionType().equals(Constants.QUERY)) {
+                if (data.getObjectType().equals(Constants.ACTORS)) {
+                    if (data.getCriteria().equals(Constants.AVERAGE)) {
                         arrayResult.add(fileWriter.writeFile(data.getActionId(),
                         "a", "Query result: " + averageActors(data.getNumber(),
                                         data.getSortType())));
-                    } else if (data.getCriteria().equals("awards")) {
+                    } else if (data.getCriteria().equals(Constants.AWARDS)) {
                         arrayResult.add(fileWriter.writeFile(data
                                 .getActionId(), "a", "Query result: "
                                 + awardsActors(data.getFilters().get(THIRD),
                                 data.getSortType())));
-                    } else if (data.getCriteria().equals("filter_description")) {
+                    } else if (data.getCriteria().equals(Constants.FILTER_DESCRIPTIONS)) {
                         arrayResult.add(fileWriter.writeFile(
                                 data.getActionId(), "a", "Query result: "
                                         + filterDescriptionActors(data.getFilters().get(2),
                                         data.getSortType())));
                     }
-                } else if (data.getObjectType().equals("movies")) {
-                    if (data.getCriteria().equals("ratings")) {
+                } else if (data.getObjectType().equals(Constants.MOVIES)) {
+                    if (data.getCriteria().equals(Constants.RATINGS)) {
                         arrayResult.add(fileWriter.writeFile(data
                                 .getActionId(), "a", "Query result: "
                                 + queryRatedMovies(data.getNumber(), data.getFilters()
                                 .get(0), data.getFilters().get(1), data.getSortType())));
-                    } else if (data.getCriteria().equals("favorite")) {
+                    } else if (data.getCriteria().equals(Constants.FAVORITE)) {
                         arrayResult.add(fileWriter.writeFile(data
                                 .getActionId(), "a", "Query result: "
                                 + queryFavoriteMovies(data.getNumber(), data.getFilters()
                                 .get(0), data.getFilters().get(1), data.getSortType())));
-                    } else if (data.getCriteria().equals("longest")) {
+                    } else if (data.getCriteria().equals(Constants.LONGEST)) {
                         arrayResult.add(fileWriter.writeFile(data
                                 .getActionId(), "a", "Query result: "
                                 + queryLongestMovies(data.getNumber(), data.getFilters()
                                 .get(0), data.getFilters().get(1), data.getSortType())));
-                    } else if (data.getCriteria().equals("most_viewed")) {
+                    } else if (data.getCriteria().equals(Constants.MOST_VIEWED)) {
                         arrayResult.add(fileWriter.writeFile(data
                                 .getActionId(), "a", "Query result: "
                                 + queryMostViewedMovies(data.getNumber(), data
                                         .getFilters().get(0), data.getFilters().get(1),
                                 data.getSortType())));
                     }
-                } else if (data.getObjectType().equals("shows")) {
-                    if (data.getCriteria().equals("ratings")) {
+                } else if (data.getObjectType().equals(Constants.SHOWS)) {
+                    if (data.getCriteria().equals(Constants.RATINGS)) {
                         arrayResult.add(fileWriter.writeFile(data
                                 .getActionId(), "a", "Query result: "
                                 + queryRatedShows(data.getNumber(), data.getFilters()
                                 .get(0), data.getFilters().get(1), data.getSortType())));
-                    } else if (data.getCriteria().equals("favorite")) {
+                    } else if (data.getCriteria().equals(Constants.FAVORITE)) {
                         arrayResult.add(fileWriter.writeFile(data
                                 .getActionId(), "a", "Query result: "
                                 + queryFavoriteShows(data.getNumber(), data.getFilters()
                                 .get(0), data.getFilters().get(1), data.getSortType())));
-                    } else if (data.getCriteria().equals("longest")) {
+                    } else if (data.getCriteria().equals(Constants.LONGEST)) {
                         arrayResult.add(fileWriter.writeFile(data
                                 .getActionId(), "a", "Query result: "
                                 + queryLongestShows(data.getNumber(), data.getFilters()
                                 .get(0), data.getFilters().get(1), data.getSortType())));
-                    } else if (data.getCriteria().equals("most_viewed")) {
+                    } else if (data.getCriteria().equals(Constants.MOST_VIEWED)) {
                         arrayResult.add(fileWriter.writeFile(data.
                                 getActionId(), "a", "Query result: "
                                 + queryMostViewedShows(data.getNumber(), data.getFilters()
                                 .get(0), data.getFilters().get(1), data.getSortType())));
                     }
-                } else if (data.getObjectType().equals("users")) {
-                    if (data.getCriteria().equals("num_ratings")) {
+                } else if (data.getObjectType().equals(Constants.USERS)) {
+                    if (data.getCriteria().equals(Constants.NUM_RATINGS)) {
                         arrayResult.add(fileWriter.writeFile(data.getActionId(), "a",
                                 "Query result: " + queryUsers(data.getNumber(),
                                         data.getSortType())));
