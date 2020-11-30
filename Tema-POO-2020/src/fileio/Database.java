@@ -178,21 +178,21 @@ public class Database {
                                         data.getSortType())));
                     }
                 }
-            } else if ("recommendation".equals(data.getActionType())) {
-                if (data.getType().equals("standard")) {
+            } else if (data.getActionType().equals(Constants.RECOMMENDATION)) {
+                if (data.getType().equals(Constants.STANDARD)) {
                     arrayResult.add(fileWriter.writeFile(data.getActionId(),
                             "a", standardRecommendation(data.getUsername())));
-                } else if (data.getType().equals("best_unseen")) {
+                } else if (data.getType().equals(Constants.BEST_UNSEEN)) {
                     arrayResult.add(fileWriter.writeFile(data
                             .getActionId(), "a", bestUnseenRecommendation(data
                             .getUsername())));
-                } else if (data.getType().equals("popular")) {
+                } else if (data.getType().equals(Constants.POPULAR)) {
                     arrayResult.add(fileWriter.writeFile(data.getActionId(),
                             "a", popularRecommendation(data.getUsername())));
-                } else if (data.getType().equals("favorite")) {
+                } else if (data.getType().equals(Constants.FAVORITE)) {
                     arrayResult.add(fileWriter.writeFile(data.getActionId(),
                             "a", favoriteRecommendation(data.getUsername())));
-                } else if (data.getType().equals("search")) {
+                } else if (data.getType().equals(Constants.SEARCH)) {
                     arrayResult.add(fileWriter.writeFile(data.getActionId(),
                     "a", (String) searchRecommendation(data.getUsername(), data.getGenre())));
                 }
