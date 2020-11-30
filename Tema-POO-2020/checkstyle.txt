@@ -1,0 +1,19 @@
+Starting audit...
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Actor.java:13:19: Variable 'ratingActor' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Database.java:1: File length is 2,174 lines (max allowed is 2,000). [FileLength]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Database.java:38:5: Method length is 162 lines (max allowed is 150). [MethodLength]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Movie.java:10:16: Variable 'finalMovieViews' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Movie.java:11:16: Variable 'favoriteMovieCount' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Movie.java:27:35: Parameter finalMovieNote should be final. [FinalParameters]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Serial.java:11:31: Variable 'serialNotesSeasonNr' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Serial.java:12:30: Variable 'serialNotesRatings' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Serial.java:14:31: Variable 'finalSeasonNotesSeasonNr' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Serial.java:15:30: Variable 'finalSeasonNotesRatings' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Serial.java:16:19: Variable 'finalSerialNote' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Serial.java:17:16: Variable 'serialDuration' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\Serial.java:18:16: Variable 'finalSerialViews' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\User.java:12:30: Variable 'seriesGradesTitle' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\User.java:14:31: Variable 'seriesGradesSeasonNr' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\Downloads\teme-tema1-2020\teme-tema1-2020\teme\tema1\Tema-POO-2020\.\src\fileio\User.java:16:30: Variable 'moviesGrades' must be private and have accessor methods. [VisibilityModifier]
+Audit done.
+Checkstyle ends with 16 errors.
